@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 
 const Job = ({ datum }) => {
-    console.log(datum);
-    const { logo, job_title, company_name, remote_or_onsite, job_type } = datum
+    const { id, logo, job_title, company_name, remote_or_onsite, job_type } = datum;
+
+    
     return (
         <div className="shadow-lg p-5">
             <div>
@@ -14,7 +15,7 @@ const Job = ({ datum }) => {
                 <button className="border border-purple-700 font-medium p-1 rounded text-purple-700 hover:bg-purple-700 hover:text-white duration-200	">{remote_or_onsite}</button>
                 <button className="border border-purple-700 font-medium p-1 rounded text-purple-700  hover:bg-purple-700 hover:text-white">{job_type}</button>
             </div>
-            <Link>
+            <Link to={`/jobs/${id}`}>
                 <button className="border hover:border-purple-700 font-medium p-2 rounded hover:text-purple-700 hover:bg-white bg-purple-700 text-white mb-3 ml-3">View Details</button>
             </Link>
 
