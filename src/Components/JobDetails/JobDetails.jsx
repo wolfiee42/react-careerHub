@@ -1,5 +1,6 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import Swal from 'sweetalert2'
+import { saveItemInStorage } from "../../LocalStorage/LocalStorage";
 
 
 const JobDetails = () => {
@@ -12,6 +13,7 @@ const JobDetails = () => {
 
 
     const handleApplyBtn = () => {
+        saveItemInStorage(idInt);
         Swal.fire(
             'Congratulation!You Applied Successfully.',
           )
